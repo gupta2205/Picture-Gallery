@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Photo extends Component {
-    render () {
-        return <div>
-            <figure className="figure"> 
-            <img src={this.props.post.imageLink}></img>
-            </figure>
-        </div>
-    }
+function Photo(props){
+    return <figure className="figure"> 
+    <img class="photo" src={props.post.imageLink} alt={props.post.description}></img>
+    <figcaption className=""><p>{props.post.description}</p></figcaption>
+    <div className="button-container">
+    <button className="remove-button">Remove</button>
+    </div> 
+</figure>    
 }
 
-export default Photo
+export default Photo 

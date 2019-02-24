@@ -34,9 +34,9 @@ body {
     background: offwhite;
 }
 .photoGrid {
+    max-width: 10000px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
     margin: 0 auto;
 }
 .figure {
@@ -46,3 +46,20 @@ body {
     flex-grow: 1;
     margin: 0 2rem 2rem 2rem;
 }
+.photo{
+    width: calc(100% +4rem);
+    margin: -2rem 0 0 -2rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+.remove-button{
+    flex-basis: 48%;
+    color: red;
+    font-size: 15px;
+    border: 2px solid #f2f2f2;
+}
+
+

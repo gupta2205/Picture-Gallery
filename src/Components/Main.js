@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PhotoWall from './PhotoWall'
+import Title from './Title'
 
 
 const posts = [{
@@ -22,7 +23,7 @@ const posts = [{
 class Main extends Component {
     render(){
         return <div> 
-            <h1> Picture Gallery</h1>
+            <Title/>
             <PhotoWall posts ={posts} />
             </div>
     }
