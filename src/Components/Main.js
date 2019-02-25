@@ -55,11 +55,12 @@ class Main extends Component {
                         <PhotoWall posts ={this.state.posts} onRemovePhoto={this.removePosts}/> 
                     </div>   
                 )}/>
-                <Route path="/AddPhoto" render = {() => (
+                <Route path="/AddPhoto" render = {({history}) => (
                     <div>
                         <AddPhoto  onAddPhoto = {(newPost) => {
                             //console.log(newPost)
                             this.addPhoto(newPost)
+                            history.push('/')
                         }}/>
                     </div>
                 )}/>
