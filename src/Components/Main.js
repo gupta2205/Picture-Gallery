@@ -3,6 +3,7 @@ import PhotoWall from './PhotoWall'
 import Title from './Title'
 import AddPhoto from './AddPhoto'
 import {Route} from 'react-router-dom'
+import {removePost} from '../redux/actions'
 
 class Main extends Component {
     constructor(){
@@ -29,8 +30,13 @@ class Main extends Component {
     //     )
     // }
 
+    componentDidMount(){
+        // this.props.dispatch(removePost(1))
+        this.props.removePost(1)    
+    }
+
     render(){
-        console.log(this.props.posts)
+        console.log(this.props)
         return (
             <div> 
                 <Route exact path="/" render = {() => (
