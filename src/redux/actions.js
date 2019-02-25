@@ -1,7 +1,7 @@
 //remove 
 export function removePost(index){
     return {
-        type: 'REMOVE_POSTS',
+        type: 'REMOVE_POST',
         index: index
     }
 }

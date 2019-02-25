@@ -7,8 +7,8 @@ function Photo(props){
     <figcaption className=""><p>{props.post.description}</p></figcaption>
     <div className="button-container">
     <button className="remove-button" onClick= {() => {
-        props.onRemovePhoto()}
-        }>Remove</button>
+        props.removePost(props.index)
+        }}>Remove</button>
     </div> 
 </figure>    
 }

@@ -1,8 +1,14 @@
 import _posts from '../data/posts'
 
+//reducers are pure functions 
 const postReducer = function posts(state = _posts , action) {
-    console.log(action.index)
-    return state
+    
+    switch(action.type){
+        case 'REMOVE_POST' : return [...state.slice(0, action.index), ...state.slice(action.index + 1)]
+
+        default: return state
+    }
+    //return state
 }
 
 export default postReducer
