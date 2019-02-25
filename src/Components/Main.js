@@ -21,10 +21,27 @@ const posts = [{
    
 
 class Main extends Component {
+    constructor(){
+        super();
+        this.state = {
+            posts: posts
+        };
+        this.removePosts = this.removePosts.bind(this);
+    }
+       
+    removePosts(postRemoved){
+       console.log(postRemoved);
+       //setstate will invlve a function which returs a filters state object
+       this.setState(() => ({    
+        posts: this.state.posts.filter(post => (post !== postRemoved))
+       })
+       )
+    }
+
     render(){
         return <div> 
             <Title/>
-            <PhotoWall posts ={posts} />
+            <PhotoWall posts ={this.state.posts} onRemovePhoto={this.removePosts}/>
             </div>
     }
 }
