@@ -9,7 +9,7 @@ class Main extends Component {
     constructor(){
         super();
     }
-    
+
     render(){
         return (
             <div> 
@@ -19,15 +19,15 @@ class Main extends Component {
                         <PhotoWall {...this.props}/> 
                     </div>   
                 )}/>
-                {/* <Route path="/AddPhoto" render = {({history}) => (
+                <Route path="/AddPhoto" render = {({history}) => (
                     <div>
-                        <AddPhoto  onAddPhoto = {(newPost) => {
-                            //console.log(newPost)
+                        <AddPhoto {...this.props} onHistory = {history}/>
+                        {/* <AddPhoto  onAddPhoto = {(newPost) => {
                             this.addPhoto(newPost)
                             history.push('/')
-                        }}/>
+                        }}/> */}
                     </div>
-                )}/> */}
+                )}/>
             </div>
         )   
     }
