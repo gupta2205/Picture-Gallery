@@ -12,9 +12,8 @@ const posts = [{
     "3919321_1443393332_n.jpg"
     }, {
     id: "1",
-    description: "Aliens???",
-    imageLink: "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc=" +
-    "08323785_735653395_n.jpg"
+    description: "Maldives",
+    imageLink: "https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704__480.jpg" 
     }, {
     id: "2",
     description: "On a vacation!",
@@ -28,16 +27,23 @@ class Main extends Component {
         this.state = {
             posts: posts
         };
-        this.removePosts = this.removePosts.bind(this);
+        this.removePosts = this.removePosts.bind(this)
+        this.addPhoto = this.addPhoto.bind(this)
     }
        
-    removePosts(postRemoved){
-       console.log(postRemoved);
+    removePosts(postRemoved) {
        //setstate will invlve a function which returs a filters state object
        this.setState(() => ({    
         posts: this.state.posts.filter(post => (post !== postRemoved))
        })
        )
+    }
+
+    addPhoto(newPost) {
+        this.setState(state => ({
+            posts: state.posts.concat(newPost)
+        })
+        )
     }
 
     render(){
@@ -51,7 +57,10 @@ class Main extends Component {
                 )}/>
                 <Route path="/AddPhoto" render = {() => (
                     <div>
-                        <AddPhoto/>
+                        <AddPhoto  onAddPhoto = {(newPost) => {
+                            //console.log(newPost)
+                            this.addPhoto(newPost)
+                        }}/>
                     </div>
                 )}/>
             </div>
