@@ -18,13 +18,12 @@ class AddPhoto extends Component {
         }
         if(description && imageLink){
             this.props.addPost(newPost) 
-            this.props.onHistory.push("/")
+            this.props.history.push("/")
         }}
     
     render() {
         return (
             <div>
-                <Title></Title>
                 <div className="form">
                 <form onSubmit={this.handleSubmit}> 
                     <input type ="text" placeholder="Link" name="link"/>
