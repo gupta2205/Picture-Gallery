@@ -1,4 +1,5 @@
 import React from 'react'
+//import {connect} from 'react-redux'
 
 function Photo(props){
     return <figure className="figure"> 
@@ -13,3 +14,15 @@ function Photo(props){
 }
 
 export default Photo 
+
+//to directly access state in store you can inject 
+//in any component using connect then ou can have this.props in photo component
+
+// function mapStateToProps(state){
+//     return {
+//         posts: state
+//     }
+// }
+
+// const App = connect(mapStateToProps)(Photo)
+

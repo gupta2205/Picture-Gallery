@@ -36,7 +36,7 @@ class Main extends Component {
                 <Route exact path="/" render = {() => (
                     <div>
                         <Title/>
-                        {/* <PhotoWall posts ={this.state.posts} onRemovePhoto={this.removePosts}/>  */}
+                        <PhotoWall posts ={this.props.posts} onRemovePhoto={this.removePosts}/> 
                     </div>   
                 )}/>
                 {/* <Route path="/AddPhoto" render = {({history}) => (
