@@ -1,13 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 //import {connect} from 'react-redux'
 
 function Photo(props){
     return <figure className="figure"> 
-    <img className="photo" src={props.post.imageLink} alt={props.post.description}></img>
+    <Link to={`/single/${props.post.id}`}><img className="photo" src={props.post.imageLink} alt={props.post.description}></img></Link>
     <figcaption className=""><p>{props.post.description}</p></figcaption>
     <div className="button-container">
     <button className="remove-button" onClick= {() => {
         props.removePost(props.index)
+        props.history.push("/")
         }}>Remove</button>
     </div> 
 </figure>    
